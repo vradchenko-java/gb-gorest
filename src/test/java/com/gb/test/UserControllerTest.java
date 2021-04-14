@@ -21,6 +21,8 @@ public class UserControllerTest {
                 .build();
 
         UserResponse createdUser = userSteps.createUser(user);
-        Assertions.assertThat(createdUser.getCode()).isEqualTo(201);
+        Assertions.assertThat(createdUser.getCode())
+                .as("User was not create")
+                .isEqualTo(201);
     }
 }
